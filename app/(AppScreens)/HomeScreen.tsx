@@ -1,11 +1,10 @@
-import { StyleSheet, View ,ScrollView} from "react-native";
+import { StyleSheet, View, ScrollView } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Appbar} from "react-native-paper";
+import { Appbar } from "react-native-paper";
 import CourseCard from "@/components/CourseCard";
 
 const HomeScreen = () => {
-  
   return (
     <View>
       <SafeAreaView>
@@ -14,15 +13,14 @@ const HomeScreen = () => {
           <Appbar.Action icon="magnify" size={20} />
         </Appbar>
         <ScrollView>
-          <CourseCard/>
+          <CourseCard />
         </ScrollView>
       </SafeAreaView>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  
   AppbarHeader: {
     backgroundColor: "gray",
   },
