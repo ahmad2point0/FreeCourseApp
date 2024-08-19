@@ -1,34 +1,44 @@
-import { StyleSheet, View, ScrollView } from "react-native";
-import React from "react";
+import { StyleSheet, View, ScrollView, Text } from "react-native";
+import { TextInput as RNTextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Appbar } from "react-native-paper";
+import { Appbar, TextInput as PaperTextInput } from "react-native-paper";
 import CourseCard from "@/components/CourseCard";
-
+import homeStyle from "@/styleSheet/HomeStyle";
+import PInputText from "@/components/PaperTextInput";
+import CategoryCard from "@/components/CategoryCard";
+import { useEffect, useState } from "react";
+import handleGreeting from "@/Functionalities/handleGreetings";
 const HomeScreen = () => {
+  const[greeting,setGreeting] =useState("")
+useEffect(
+  ()=>{
+    setGreeting(handleGreeting());
+    console.log('hello',greeting)
+  }
+)
   return (
     <View>
-      <SafeAreaView>
-        <Appbar style={styles.AppbarHeader}>
-          <Appbar.Content title="Course" titleStyle={styles.Title} />
-          <Appbar.Action icon="magnify" size={20} />
-        </Appbar>
-        <ScrollView>
-          <CourseCard />
-        </ScrollView>
-      </SafeAreaView>
+      <View style={homeStyle.upperBackView}>
+        <View style={homeStyle.upperTextContainer}>
+          <Text style={homeStyle.Title}>Hello,</Text>
+          <Text style={homeStyle.SubTitle}>{greeting}</Text>
+        </View>
+        <View style={homeStyle.InputTextContainer}>
+          <PInputText />
+        </View>
+      </View>
+
+      <ScrollView>
+        <View style={homeStyle.MainContainer}>
+          <View style={homeStyle.InsideContainer}>
+            <Text style={homeStyle.InsideText}>Explore categories</Text>
+            <Text style={homeStyle.InsideSubText}>See all</Text>
+          </View>
+          <CategoryCard/>
+        </View>
+      </ScrollView>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  AppbarHeader: {
-    backgroundColor: "gray",
-  },
-  Title: {
-    fontWeight: "bold",
-    color: "yellow",
-    textAlign: "center",
-  },
-});
 
 export default HomeScreen;

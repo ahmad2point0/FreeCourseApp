@@ -1,10 +1,6 @@
 import { StyleSheet } from "react-native";
 import colors from "@/ui/colors";
 const CardStyles = StyleSheet.create({
-    MainContainer: {
-        flex: 1,
-        padding: 8,
-      },
       CardTitle: {
         fontWeight: "900",
       },

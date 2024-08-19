@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native";
+import colors from "@/ui/colors";
 const splashStyle = StyleSheet.create({
     
     upperBackView:{
         height:250,
-        backgroundColor:'purple'
+        backgroundColor:colors.secondary
     },
     image:{
         alignSelf:'center',
@@ -21,22 +22,23 @@ const splashStyle = StyleSheet.create({
     HeaderText:{
         textAlign:'center',
         fontWeight:'bold',
-        fontSize:25
+        fontSize:25,
+        color:colors.TextBlack
     },
     subText:{
         textAlign:'center',
         marginTop:12,
-        color:'gray'
+        color:colors.TextGray
     },
     button:{
         marginTop:50,
         borderRadius:15,
         padding:18,
-        backgroundColor:'purple'
+        backgroundColor:colors.secondary
     },
     buttonText:{
         textAlign:'center',
-        color:'white',
+        color:colors.TextWhite,
         fontSize:17
     },
     policyContainer:{
@@ -47,7 +49,7 @@ const splashStyle = StyleSheet.create({
         justifyContent:'center',
     },
     policyText:{
-        color:'gray',
+        color:colors.TextGray,
         fontSize:12
     },
     highlightPolicyText:{

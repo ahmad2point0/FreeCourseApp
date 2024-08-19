@@ -3,13 +3,12 @@ import React from "react";
 import { router } from "expo-router";
 import splashStyle from "@/styleSheet/splashScreenStyle";
 import { SafeAreaView } from "react-native-safe-area-context";
-import splashImage from "@/assests/images/splashimage.png";
 export default function SplashScreen1() {
   return (
     <View>
       <View style={splashStyle.upperBackView}></View>
       <SafeAreaView>
-        <Image source={splashImage} style={splashStyle.image} />
+        <Image source={require("@/assests/images/splashimage.png")} style={splashStyle.image} />
         <View style={splashStyle.container}>
           <Text style={splashStyle.HeaderText}>
             Get Free Course in all fields

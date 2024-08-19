@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View } from "react-native";
 import React from "react";
 import course from "@/Data/courses.json";
 import {
@@ -10,7 +10,7 @@ import { handleURL } from "@/Functionalities/HandleFunctions";
 import CardStyles from "@/styleSheet/CourseCardStyle";
 export default function CourseCard() {
   return (
-    <View style={CardStyles.MainContainer}>
+    <View >
       {course.map((item) => (
         <View key={item.id}>
           <Card style={CardStyles.Card}>
